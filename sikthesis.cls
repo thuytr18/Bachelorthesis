@@ -100,8 +100,8 @@ headsep=2em,footskip=3em]{geometry}
 \newcommand{\sikTitlePage}{
   \begin{titlepage}
     \begin{center}%
-      {\huge \textsc{Institut f\"ur Informatik}} \\[1em]%
-      {\huge \textsc{Universit\"at Augsburg}}%
+      {\huge \textsc{Institute of Computer Science}} \\[1em]%
+      {\huge \textsc{University of Augsburg}}%
       \\\vspace{5em}
       \includegraphics[height=4.2cm]{uniwappen.pdf}%
       \\\vspace{5em}
@@ -121,11 +121,11 @@ headsep=2em,footskip=3em]{geometry}
       \\\vfill
       \begin{center}%
          \begin{tabular}{rl}
-                          Matrikelnummer: & \@sikMatnr \\    
-                          Gutachter: & \@sikRefereeOne \\      
-                          Zweitgutachter: & \@sikRefereeTwo \\       
-                          Betreuer: & \@sikAdviser \\       
-                          Datum: & \@sikDate \\
+                          Matriculation Number: & \@sikMatnr \\    
+                          First Reviewer: & \@sikRefereeOne \\      
+                          Second Reviewer: & \@sikRefereeTwo \\       
+                          Scientific Supervisor: & \@sikAdviser \\       
+                          Date: & \@sikDate \\
            \end{tabular}
 		\end{center}\par
     \end{center}\par
@@ -133,11 +133,11 @@ headsep=2em,footskip=3em]{geometry}
 
   \vspace*{\fill}
   \thispagestyle{empty}
-  verfasst am\\
-  Lehrstuhl für Quantenalgorithmik\\
+  written at\\
+  Chair of Quantum Algorithms\\
   Prof. Dr. Jakob Kottmann \\
-  Institut f\"ur Informatik \\
-  Universit\"at Augsburg \\
+  Institute of Computer Science\\
+  University of Augsburg \\
   D--86135 Augsburg, Germany \\
 }
 
