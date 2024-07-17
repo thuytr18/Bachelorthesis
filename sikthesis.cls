@@ -48,7 +48,7 @@ headsep=2em,footskip=3em]{geometry}
 \RequirePackage{acro}
 \RequirePackage{amsmath}
 \RequirePackage{appendix}
-\RequirePackage[german]{babel}
+\RequirePackage[english]{babel}
 \RequirePackage{graphicx}
 \RequirePackage[utf8]{inputenc} % text encoding is UTF-8
 \RequirePackage{todonotes}
