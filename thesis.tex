@@ -1,0 +1,102 @@
+% Encoding: UTF-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{sikthesis}
+%\documentclass[draft]{sikthesis}
+
+\usepackage{textcomp} % spezielle Zeichen fuer den Text, z.B. \textmu
+\usepackage{algpseudocode} % Pseudocode
+\usepackage{booktabs} % Tabellen
+
+
+% Fuegen Sie hier ggf. weitere benoetigte Pakete ein
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fuegen Sie hier ggf. weitere ben"otigte tikz-Bibliotheken ein
+\usetikzlibrary{automata,positioning}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\clubpenalty=10000  
+%\widowpenalty=10000
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Falls Sie noch weitere Kommandos benoetigen, so ist hier der
+% richtige Punkt, diese zu definieren
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Akronyme
+
+\DeclareAcronym{os}{	
+  short = OS,
+  long = operating system
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frontmatter
+% Der allgemeine Anfangsteil der Arbeit wird mit roemischen Zahlen
+% nummeriert. Die einzelnen Kapitel im Anfangsteil werden ins
+% Inhaltsverzeichnis aufgenommen, erhalten aber keine Nummern
+
+% Tragen Sie hier die Daten f"ur die Titelseite ein
+\sikType{Bachelorarbeit} % Art der Arbeit (Diplom/Bachelor/Master)
+\sikAuthor{Ho Son Thuy Truong} % Ihr Name
+\sikTitle{Automatized Eigensolver for General One-body Potentials} % Titel der Arbeit
+\sikMatnr{2020659}
+\sikRefereeOne{Prof. Dr. Jakob Kottmann} % Erstgutachter (= betreuender Prof.)
+\sikRefereeTwo{Prof. Dr. Mónica Benito} % Zweitgutachter
+\sikAdviser{Prof. Dr. Jakob Kottmann} % Betreuer am Lehrstuhl
+\sikDate{\today} % Abgabedatum
+
+\sikTitlePage
+
+\include{abstract}
+
+
+% Inhaltsverzeichnis
+\tableofcontents
+
+\mainmatter
+% Nun beginnt die eigentliche Arbeit, die Seiten werden hier nun mit
+% arabischen Zahlen nummeriert
+
+% Durch das Ablegen jedes Kapitels in einer eigenen Datei bleibt es
+% einfacher, die Uebersicht zu behalten
+\include{einleitung}
+\include{inhalt}
+\include{latex}
+\include{schluss}
+
+% Verzeichnisse
+
+\listoffigures
+\listoftables
+\bibliographystyle{abbrv}
+\bibliography{thesis}
+
+% Falls noetig, koennen Sie hier noch Anhaenge aufnehmen. Die
+% Anhangskapitel werden mit Buchstaben nummeriert. Auch hier sollte
+% jedes Kapitel in einer eigenen Datei liegen.
+
+\begin{appendix}
+\chapter{Anhangskapitel}
+Falls Sie noch Informationen in die Arbeit einfügen m"ochten, die nur
+am Rande relevant für das Verst"andnis Ihrer Arbeit sind, so legen
+Sie daf"ur einen Anhang an.
+Internetreferenz \cite{heise}, Referenz mit mehreren Autoren \cite{liu73acm}
+\section{foo}
+\section{bar}
+\chapter{Zweites Anhangskapitel}
+\end{appendix}
+
+\backmatter
+
+\end{document}
