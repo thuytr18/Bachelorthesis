@@ -2,9 +2,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 With quantum dots being a popular research topic following the 2023 Nobel Prize in Chemistry, the need to solve the Schrödinger equation for quantum dots has become increasingly important. 
-In this thesis, an automatized eigensolver for general one-body potentials is developed and an example of the harmonic oscillator is demonstrated.
-The basis functions for the eigensolver are generated using two different approaches. 
-The first method uses the basis functions of the harmonic oscillator to generate the initial guesses, while the second method uses the given potential. In this approach the basis functions depend on the potential.
-The eigensolver with general basis functions is tested with different potentials such as Gaussian potentials and double-well potentials.
-After generating the basis functions, the convergence between these two methods is compared in terms of speed and accuracy.
+Due to the variety of shapes and sizes of quantum dots, the potential is often complex and highly dependent on their properties. 
+With this variety, it is difficult to find a universal set of basis functions that can be used for all quantum dots. 
+For this reason, an adaptive real-space approach based on multiwavelets is used.
+This allows the dynamic generation of basis functions based on the given potential of the quantum dot.
+A method for the automatic generation of system-adapted initial guesses is developed and integrated into the automatized eigensolver for general one-body potentials.
 This automatized eigensolver is written using MADNESS which ensures a high level of performance and accuracy.
