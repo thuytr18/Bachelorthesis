@@ -121,7 +121,7 @@ headsep=2em,footskip=3em]{geometry}
       \\\vfill
       \begin{center}%
          \begin{tabular}{rl}
-                          Matriculation Number: & \@sikMatnr \\    
+                          Student ID Number: & \@sikMatnr \\    
                           First Reviewer: & \@sikRefereeOne \\      
                           Second Reviewer: & \@sikRefereeTwo \\       
                           Scientific Supervisor: & \@sikAdviser \\       
