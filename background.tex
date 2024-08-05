@@ -2,4 +2,53 @@
 \label{c:background}
 
 \section{Quantum Dots}
+
 \section{Second Quantization}
+
+In this chapter, the concept of second quantization is introduced and explained. To provide a better understanding of the second quantization, the necessary background knowledge about quantum field theory is presented.
+The chapter begins with an overview of the Fock Space, a mathematical structure used to describe quantum many-body systems. Following this, the creation and annihilation operators are introduced. These operators are essential for representing quantum many-body systems in the second quantization. Finally, the last section demonstrates how quantum many-body systems can be represented in the second quantized form using these operations.
+
+\subsection{Fock Space}
+The Fock space provides the fundamental structure for quantum many-body theory. Since this thesis focuses on electrons in a many-body system, the Fock space described here is the fermionic Fock space. Fermions, such as electrons, are particles that obey the Pauli exclusion principle, which states that two or more fermions cannot occupy the same quantum state \cite{Griffiths2014}. This principle results in fermions having antisymmetric wavefunctions.
+
+To describe an $N$-electron system, the Slater determinant is used. The Slater determinant is the determinant of a matrix whose rows are the single-particle wavefunctions of the electrons and fulfills the anti-symmetry requirement. 
+Let $\{\phi_P(\textbf{x})\}$ be a set of $N$ orthonormal single-particle wavefunctions with $\textbf{x}_l$ being the coordinates of the $l$-th electron consisting of the spatial and spin coordinates.
+The Slater determinant for an $N$-electron system is defined as: 
+
+\begin{equation}
+    \Psi(\phi_{P_1}, \phi_{P_2},..., \phi_{P_N}) = \frac{1}{\sqrt{N!}}
+    \begin{vmatrix}
+        \phi_{P_1}(\mathbf{x_1}) & \phi_{P_2}(\mathbf{x_1}) & \cdots & \phi_{P_N}(\mathbf{x_1}) \\
+        \phi_{P_1}(\mathbf{x_2}) & \phi_{P_2}(\mathbf{x_2}) & \cdots & \phi_{P_N}(\mathbf{x_2}) \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \phi_{P_1}(\mathbf{x_N}) & \phi_{P_2}(\mathbf{x_N}) & \cdots & \phi_{P_N}(\mathbf{x_N})
+    \end{vmatrix} = \lvert \phi_{P_1}, \phi_{P_2},..., \phi_{P_N} \rvert 
+\end{equation}
+
+With this definition of the Slater determinant, the Fock space can be explained. The Fock space $\mathcal{F}$ is an abstract linear vector space in which the Slater determinant is represented by an occupation-number vector $\ket{\textbf{k}}$, defined as:
+
+\begin{equation}
+    \ket{\mathbf{k}} = \ket{k_1, k_2, \ldots, k_N}, \quad k_P = 
+    \begin{cases}
+        1, & \text{if $\phi_P$ is occupied} \\
+        0, & \text{if $\phi_P$ is unoccupied} 
+    \end{cases}
+\end{equation}
+\cite{Helgaker2000}. The occupation-number vectors form an orthonormal basis for the Fock space $\mathcal{F}^N$, where $\sum_{P=1}^{N} k_P = N$. Each state $\ket{\Psi}$ in the Fock space can be represented as a linear combination of these basis vectors:
+\begin{equation}
+    \ket{\Psi} = \sum_{\mathbf{k}} c_{\mathbf{k}} \ket{\mathbf{k}} = \sum_{P = 1}^N c_{k_1}, c_{k_2},\ldots, c_{k_N} \ket{k_1, k_2, \ldots, k_N}
+\end{equation}
+\cite{Altland}.
+The Fock space $\mathcal{F}^N$ can be represented as a direct sum of the subspaces: 
+\begin{equation}
+    \mathcal{F}^N = \mathcal{F}^0 \oplus \mathcal{F}^1 \oplus \mathcal{F}^2 \oplus \ldots \oplus \mathcal{F}^N
+\end{equation}
+where $\mathcal{F}^i$ is the subspace of all occupation-number vectors $\ket{\mathbf{k}}$ for which $\sum_{P=1}^{N} k_P = i$. The subspace $\mathcal{F}^0$ is the vacuum state in which no single-particle wavefunction is occupied. This subspace contains only the vacuum state $\ket{0}$.
+
+\subsection{Creation and Annihilation Operators}
+\subsection{Second Quantized Representation}
+
+
+
+
+The second quantization is a formalism to describe and analyze quantum many-body systems. \cite{Altland}
