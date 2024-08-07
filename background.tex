@@ -70,23 +70,57 @@ Therefore, the operator is called creation operator, as it creates particles in 
 
 The equations \eqref{eq: creation_first} and \eqref{eq: creation_second} can be summarized as:
 \begin{equation}
-    a_P^{\dagger}\ket{\mathbf{k}} = \delta_{k_p, 0} \xi_P^{\mathbf{k}} \ket{k_1, k_2, \ldots, 1_P, \ldots, k_N}
+    a_P^{\dagger}\ket{\mathbf{k}} = \delta_{k_P, 0} \xi_P^{\mathbf{k}} \ket{k_1, k_2, \ldots, 1_P, \ldots, k_N}
 \end{equation}
-where $\delta_{k_p, 0}$ is the Kronecker delta function, which is $1$ if $k_P = 0$ and $0$ otherwise.
+where $\delta_{k_P, 0}$ is the Kronecker delta function, which is $1$ if $k_P = 0$ and $0$ otherwise.
 
 By applying $a_P^{\dagger}$ twice on an occupation-number vector, the result is:
 \begin{align}
-    a_P^{\dagger} a_P^{\dagger} \ket{k_1, k_2, \ldots, k_P, \ldots, k_N} = a_P^{\dagger} \delta_{k_p, 0} \xi_P^{\mathbf{k}} \ket{k_1, k_2, \ldots, 1_P, \ldots, k_N} = 0
+    a_P^{\dagger} a_P^{\dagger} \ket{k_1, k_2, \ldots, k_P, \ldots, k_N} = a_P^{\dagger} \delta_{k_P, 0} \xi_P^{\mathbf{k}} \ket{k_1, k_2, \ldots, 1_P, \ldots, k_N} = 0
 \end{align}
 It follows from the equation that the creation operator $a_P^{\dagger}$ is nilpotent, meaning that applied twice, it results in zero:
 \begin{equation}
     (a_P^{\dagger})^2 = a_P^{\dagger} a_P^{\dagger} = 0.
 \end{equation}
-The order of applying the operator is also important, as the operators do not commute: 
+The order in which the operators are applied is important because the operators do not commute. 
 For $P \neq Q$ and $P < Q$ the following holds:
 \begin{equation}
-    a_P^{\dagger} a_Q^{\dagger} \ket{\ldots, k_p, \ldots, k_q, \ldots}
+    \begin{split}
+        a_P^{\dagger} a_Q^{\dagger} \ket{\ldots, k_P, \ldots, k_Q, \ldots} &= a_P^{\dagger} \left ( \delta_{k_Q, 0} \xi_Q^{\mathbf{k}} \ket{\ldots, k_P, \ldots, 1_Q, \ldots} \right ) \\ 
+        &= \delta_{k_P, 0} \xi_P^{\mathbf{k}} \left (  \delta_{k_Q, 0} \xi_Q^{\mathbf{k}} \ket{\ldots, 1_P, \ldots, 1_Q, \ldots} \right )
+    \end{split}
 \end{equation}
+Whereas for $P > Q$, the result is:
+\begin{equation}
+    \begin{split}
+        a_Q^{\dagger} a_P^{\dagger} \ket{\ldots, k_P, \ldots, k_Q, \ldots} &= a_Q^{\dagger} \left [ \delta_{k_P, 0} \xi_P^{\mathbf{k}} \ket{\ldots, 1_P, \ldots, k_Q, \ldots} \right ] \\ 
+        &= \delta_{k_Q, 0} \left (-\xi_Q^{\mathbf{k}}\right ) \left [  \delta_{k_P, 0} \xi_P^{\mathbf{k}} \ket{\ldots, 1_P, \ldots, 1_Q, \ldots} \right ]
+    \end{split}
+\end{equation}
+The factor $-\xi_Q^{\mathbf{k}}$ results from the additional particle created by the operator $a_P^{\dagger}$, provided that the particle does not vanish. This is because $a_P^{\dagger}\ket{\textbf{k}}$ contains one more particle than $\ket{\textbf{k}}$ \cite{Helgaker2000}.
+Altogether, the creation operators are anti-commutative and for all arbitrary occupation-number vectors $\ket{\textbf{k}}$ and any pair of creation operators, the following holds:
+\begin{equation}
+    a_P^{\dagger} a_Q^{\dagger} + a_Q^{\dagger} a_P^{\dagger} = \left [ a_P^{\dagger}, a_Q^{\dagger} \right ]_+ = 0. \label{eq: anti_commutator}
+\end{equation}
+\cite{Altland, Helgaker2000}.
+
+After introducing the creation operator $a_P^{\dagger}$, the annihilation operator $a_P$ is defined as the adjoint of the creation operator. Whereas the creation operator increases the number of particles in the Fock space, the annihilation operator decreases it. 
+The annihilation operator $a_P$ is defined as:
+\begin{equation}
+    a_P \ket{\mathbf{k}} = \delta_{k_P, 1} \xi_P^{\mathbf{k}} \ket{k_1, k_2, \ldots, 0_P, \ldots, k_N}
+\end{equation}
+where $\delta_{k_P, 1}$ is $1$ if $k_P = 1$ and $0$ otherwise. The operator annihilates the particle in state $\phi_P$ if it is occupied and results in zero if the state is unoccupied. For this reason, the operator is called the annihilation operator. 
+Applied to the vacuum state, the outcome is:
+\begin{equation}
+    a_P \ket{0} = 0.
+\end{equation}
+Since there is no particle to annihilate in the vacuum state, the result is zero.
+By taking the hermitian adjoint of the equation \eqref{eq: anti_commutator}, the following relation is obtained:
+\begin{equation}
+    a_P a_Q + a_Q a_P = \left [ a_P, a_Q \right ]_+ = 0.
+\end{equation}
+
+
 
 \subsection{Second Quantized Representation}
 
