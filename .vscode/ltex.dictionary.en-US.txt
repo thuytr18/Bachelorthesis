@@ -4,3 +4,4 @@ multiwavelets
 Fock
 wavefunctions
 wavefunction
+nilpotent
