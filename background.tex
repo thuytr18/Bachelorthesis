@@ -70,7 +70,7 @@ Therefore, the operator is called creation operator, as it creates particles in 
 
 The equations \eqref{eq: creation_first} and \eqref{eq: creation_second} can be summarized as:
 \begin{equation}
-    a_P^{\dagger}\ket{\mathbf{k}} = \delta_{k_P, 0} \xi_P^{\mathbf{k}} \ket{k_1, k_2, \ldots, 1_P, \ldots, k_N}
+    a_P^{\dagger}\ket{\mathbf{k}} = \delta_{k_P, 0} \xi_P^{\mathbf{k}} \ket{k_1, k_2, \ldots, 1_P, \ldots, k_N} \label{eq: creation_operator}
 \end{equation}
 where $\delta_{k_P, 0}$ is the Kronecker delta function, which is $1$ if $k_P = 0$ and $0$ otherwise.
 
@@ -104,10 +104,10 @@ Altogether, the creation operators are anti-commutative and for all arbitrary oc
 \end{equation}
 \cite{Altland, Helgaker2000}.
 
-After introducing the creation operator $a_P^{\dagger}$, the annihilation operator $a_P$ is defined as the adjoint of the creation operator. Whereas the creation operator increases the number of particles in the Fock space, the annihilation operator decreases it. 
-The annihilation operator $a_P$ is defined as:
+After introducing the creation operator $a_P^{\dagger}$, the annihilation operator $a_P$ is defined as the adjoint of the creation operator. While the creation operator increases the number of particles in the Fock space, the annihilation operator decreases it. 
+The annihilation operator $a_P$ is defined by:
 \begin{equation}
-    a_P \ket{\mathbf{k}} = \delta_{k_P, 1} \xi_P^{\mathbf{k}} \ket{k_1, k_2, \ldots, 0_P, \ldots, k_N}
+    a_P \ket{\mathbf{k}} = \delta_{k_P, 1} \xi_P^{\mathbf{k}} \ket{k_1, k_2, \ldots, 0_P, \ldots, k_N}, \label{eq: annihilation_operator}
 \end{equation}
 where $\delta_{k_P, 1}$ is $1$ if $k_P = 1$ and $0$ otherwise. The operator annihilates the particle in state $\phi_P$ if it is occupied and results in zero if the state is unoccupied. For this reason, the operator is called the annihilation operator. 
 Applied to the vacuum state, the outcome is:
@@ -119,8 +119,58 @@ By taking the hermitian adjoint of the equation \eqref{eq: anti_commutator}, the
 \begin{equation}
     a_P a_Q + a_Q a_P = \left [ a_P, a_Q \right ]_+ = 0.
 \end{equation}
+Next, the commutation relations between creation and annihilation operators are established by applying these operators to an arbitrary occupation-number vector $\ket{\textbf{k}}$.
 
+In case the annihilation operator is applied before the creation operator on the same particle, the result is:
+\begin{equation}
+    a_P^{\dagger} a_P \ket{\mathbf{k}} = \delta_{k_P, 1} \ket{\mathbf{k}}. \label{eq: commutation_relation_first}
+\end{equation}
+This is because if $k_P = 0$, the annihilation operator results in $0$ and the creation operator has no effect:
+\begin{equation}
+    a_P^{\dagger} a_P \ket{k_1, \ldots, 0_P, \ldots, k_N} = a_P^{\dagger} 0 = 0
+\end{equation}
+If $k_P = 1$, the annihilation operator removes the particle and the creation operator then creates the particle again in the same state:
+\begin{equation}
+    \begin{split}
+        a_P^{\dagger} a_P \ket{k_1, \ldots, 1_P, \ldots, k_N} &= a_P^{\dagger} \left [ \xi_P^{\mathbf{k}} \ket{k_1, \ldots, 0_P, \ldots, k_N} \right ]\\
+        &=  \left (\xi_P^{\mathbf{k}} \right )^2 \ket{k_1, \ldots, 1_P, \ldots, k_N} = \ket{\mathbf{k}}
+    \end{split}
+\end{equation}
+When the creation operator is applied before the annihilation operator, the result is:
+\begin{equation}
+    a_P a_P^{\dagger} \ket{\mathbf{k}} = \delta_{k_P, 0} \ket{\mathbf{k}}. \label{eq: commutation_relation_second}
+\end{equation}
+Here, the creation operator results in $0$ and the annihilation operator has no effect if $k_P = 1$ and for $k_P = 0$, the creation operator creates a particle and the annihilation operator removes it, resulting in the original state $\ket{\mathbf{k}}$.
 
+With these equations \eqref{eq: commutation_relation_first} and \eqref{eq: commutation_relation_second}, the following expression for an arbitrary occupation-number vector $\ket{\textbf{k}}$ is obtained: 
+\begin{equation}
+    (a_P^{\dagger} a_P + a_P a_P^{\dagger}) \ket{\mathbf{k}} = (\delta_{k_P, 1} + \delta_{k_P, 0}) \ket{\mathbf{k}} = \ket{\mathbf{k}}
+\end{equation}
+with 
+\begin{equation}
+    a_P^{\dagger} a_P + a_P a_P^{\dagger} = 1.
+\end{equation}
+
+After applying the creation and annihilation operators to the same particle of an arbitrary occupation-number vector $\ket{\textbf{k}}$, the application to different particles is considered.
+For $P \neq Q$ and $P < Q$, the outcomes are:
+\begin{align}
+    a_P^{\dagger} a_Q \ket{\ldots, k_P, \ldots, k_Q, \ldots} &= \delta_{k_P, 0} \xi_P^{\mathbf{k}} \left [ \delta_{k_Q, 1} \xi_Q^{\mathbf{k}} \ket{\ldots, 1_P, \ldots, 0_Q, \ldots} \right ] \\
+    a_Q a_P^{\dagger} \ket{\ldots, k_P, \ldots, k_Q, \ldots} &= \delta_{k_Q, 1} \left (-\xi_Q^{\mathbf{k}} \right ) \left [ \delta_{k_P, 0} \xi_P^{\mathbf{k}} \ket{\ldots, 1_P, \ldots, 0_Q, \ldots} \right ]. \label{eq: commutation_relation_third}
+\end{align}
+The factor $-\xi_Q^{\mathbf{k}}$ results from the additional particle created by the operator $a_P^{\dagger}$, provided that the particle does not vanish.
+Altogether, for $P < Q$, the following commutation relation holds:
+\begin{equation}
+    a_P^{\dagger} a_Q + a_Q a_P^{\dagger} = 0.
+\end{equation}
+For $P > Q$, the result can be obtained by taking the Hermitian conjugate of \eqref{eq: commutation_relation_third} and renaming the indices.
+Finally, the commutation relations between the creation and annihilation operators are summarized as:
+\begin{align}
+    a_P^{\dagger} a_Q + a_Q a_P^{\dagger} &= \left [a_P^{\dagger}, a_Q \right ]_+ = \delta_{P, Q} \\
+    a_P^{\dagger} a_Q^{\dagger} + a_Q^{\dagger} a_P^{\dagger} &= \left [a_P^{\dagger}, a_Q^{\dagger} \right ]_+ = 0 \\
+    a_P a_Q + a_Q a_P &= \left [a_P, a_Q \right ]_+ = 0
+\end{align}
+
+After introducing the creation and annihilation operators with their commutation relations, the next section demonstrates how quantum many-body systems can be represented in the second quantized form using these operators.
 
 \subsection{Second Quantized Representation}
 
